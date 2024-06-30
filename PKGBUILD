@@ -1,6 +1,6 @@
-# Maintainer: Steve Sklar <sklarsa@gmail.com>
-# based on https://aur.archlinux.org/packages/brother-mfc-l2713dw/
-pkgname="brother-mfc-l2400dw"
+# Maintainer: Christian Shtarkov <ops@shtarkov.com>
+# based on https://aur.archlinux.org/packages/brother-mfc-l2400dw/
+pkgname="brother-hl-l2400dw"
 pkgver="4.1.0"
 pkgrel=1
 pkgdesc="LPR and CUPS driver for the Brother HL-L2400DW"
@@ -11,14 +11,14 @@ depends=("cups")
 depends_x86_64=("lib32-glibc")
 install="$pkgname.install"
 source=(
-  "https://download.brother.com/welcome/dlf105969/hll2460dwpdrv-$pkgver-$pkgrel.i386.rpm"
+  "https://download.brother.com/welcome/dlf105950/hll2400dwepdrv-${pkgver}-${pkgrel}.i386.rpm"
 )
 md5sums=(
-	"0e42304efafea5fa0deaa64a6291d7a4"
+	"b625952f32780d2a60187cf2d9bfa77e"
 )
 
 package() {
-	_model="HLL2460DW"
+	_model="HLL2400DWE"
   # using /usr/share instead of /opt
   mkdir -p "$pkgdir/usr/share"
   cp -R "$srcdir/opt/brother" "$pkgdir/usr/share"
